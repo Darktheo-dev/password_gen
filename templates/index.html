@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Password Generator</h1>
+      <form method="post">
+        <label>Password Length:</label>
+        <input
+          type="number"
+          name="length"
+          min="4"
+          max="50"
+          required
+        /><br /><br />
+
+        <label
+          ><input type="checkbox" name="include_upper" /> Include Uppercase
+          Letters</label
+        ><br />
+        <label
+          ><input type="checkbox" name="include_digits" /> Include Digits</label
+        ><br />
+        <label
+          ><input type="checkbox" name="include_symbols" /> Include
+          Symbols</label
+        ><br /><br />
+
+        <button type="submit">Generate Password</button>
+      </form>
+
+      {% if password %}
+      <p class="result">Generated Password: <strong>{{ password }}</strong></p>
+      {% endif %}
+    </div>
+  </body>
+</html>
